@@ -26,12 +26,25 @@
   });
   motionPreference.addEventListener('change', syncMotion);
 
-  // Keep the project window below the introduction as fonts and viewport change.
+  // Fit the desktop to the available height, with compact launchers on small screens.
+  const workspace = $('.workspace');
   const introWindow = $('.intro-window');
-  const layoutDesktop = () => $('.workspace').style.setProperty('--intro-height', introWindow.offsetHeight + 'px');
+  const educationWindow = $('.education-window');
+  const layoutDesktop = () => {
+    const scale = innerWidth > 1000 ? Math.min(1, Math.max(.45, (workspace.clientHeight - 20) / (innerWidth * .625))) : 1;
+    workspace.style.setProperty('--scene-scale', scale.toFixed(4));
+    workspace.style.setProperty('--intro-height', (introWindow.offsetHeight * scale).toFixed(2) + 'px');
+    workspace.style.setProperty('--education-bottom', (educationWindow.offsetTop + educationWindow.offsetHeight * scale).toFixed(2) + 'px');
+  };
   layoutDesktop();
-  if ('ResizeObserver' in window) new ResizeObserver(layoutDesktop).observe(introWindow);
-  else addEventListener('resize', layoutDesktop, { passive: true });
+  if ('ResizeObserver' in window) {
+    const desktopObserver = new ResizeObserver(layoutDesktop);
+    [workspace, introWindow, educationWindow].forEach(element => desktopObserver.observe(element));
+  }
+  addEventListener('resize', layoutDesktop, { passive: true });
+  document.fonts.ready.then(layoutDesktop);
+  $('#toolbox-app-content').append($('#toolbox-content .toolbox-list').cloneNode(true));
+  [...$('#education-content').children].forEach(element => $('#education-app-content').append(element.cloneNode(true)));
 
   const startButton = $('#start-button');
   const startMenu = $('#start-menu');

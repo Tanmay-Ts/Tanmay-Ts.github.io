@@ -1,0 +1,89 @@
+/* The desktop occupies one viewport. Only app-window contents may scroll. */
+html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none;scroll-behavior:auto}
+body{position:fixed;inset:0;padding:0}
+.workspace{position:absolute;inset:var(--bar) 0 var(--task);width:100%;height:auto;min-height:0;display:block;padding:0;overflow:hidden}
+.room-art{position:absolute;inset:0;width:auto;height:auto;border:0;box-shadow:none;z-index:-3;background-size:cover;background-position:center center}
+.compact-apps{display:none}
+.intro-window,.toolbox-window,.education-window,.projects-window,.desktop-note{transform:scale(var(--scene-scale,1));transform-origin:top left}
+.intro-window{width:calc(52.4% / var(--scene-scale,1));max-width:calc(850px / var(--scene-scale,1))}
+.toolbox-window{width:calc(11.9% / var(--scene-scale,1));max-width:calc(200px / var(--scene-scale,1))}
+.education-window,.desktop-note{width:calc(15.1% / var(--scene-scale,1));max-width:calc(250px / var(--scene-scale,1))}
+.projects-window{width:calc(30.5% / var(--scene-scale,1));max-width:calc(500px / var(--scene-scale,1));top:calc(var(--intro-height,360px) + 12px)}
+.desktop-note{top:calc(var(--education-bottom,205px) + 16px)}
+.desktop-note:hover{transform:scale(var(--scene-scale,1)) translate(-2px,-2px)}
+.desktop-note:active{transform:scale(var(--scene-scale,1)) translate(3px,3px)}
+.dev-window{right:5px;top:auto;bottom:8%;transform:rotate(-3deg) scale(var(--scene-scale,1));transform-origin:bottom right}
+.desktop-hint{bottom:10px;max-width:calc(100% - 36px)}
+.app-window{position:fixed;max-height:calc(100dvh - var(--bar) - var(--task) - 24px);overflow:auto}
+.start-menu{max-height:calc(100dvh - var(--bar) - var(--task) - 12px);overflow:auto}
+.info-app{width:min(550px,calc(100% - 24px))}
+.info-app .toolbox-list{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-app .toolbox-list>div+div{margin-top:0}
+.info-app .toolbox-list dt{font-size:11px}
+.info-app .toolbox-list dd{font-size:16px;line-height:1.7}
+.info-app .education-content{font-size:17px;line-height:1.8}
+.info-app .education-content small{display:block;font:12px/1.5 var(--mono);margin-top:24px}
+@media(max-width:1000px){
+  .workspace{--scene-scale:1;background:#242a35}
+  .intro-window{position:absolute;top:12px;left:12px;width:calc(100% - 24px);max-width:none;margin:0;padding-top:9px;border:3px solid var(--black);transform:none;box-shadow:4px 4px var(--black)}
+  .intro-panel{min-height:0;margin:0 9px;padding:12px 15px 13px}
+  .intro-copy{width:65%}
+  .intro-copy h1{font-size:clamp(40px,7.2vw,65px);line-height:.9;margin:8px 0 10px;max-width:none}
+  .eyebrow{font-size:8px}
+  .intro-role{font-size:10px;margin:9px 0}
+  .intro-description{font-size:14px;line-height:1.45;max-width:480px}
+  .intro-computer{width:31%;top:15px;right:9px}
+  .intro-sticker{position:absolute;right:12px;bottom:14px;max-width:34%;font-size:7px;margin:0;padding:6px}
+  .social-tray{grid-template-columns:repeat(4,minmax(0,1fr));padding:9px 12px 12px;gap:11px}
+  .social-tray .retro-button{min-height:36px;font-size:10px;padding:7px 9px}
+  .toolbox-window,.education-window,.projects-window,.desktop-note,.dev-window,.desktop-hint{display:none}
+  .compact-apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;position:absolute;top:calc(var(--intro-height,280px) + 27px);left:14px;right:17px;z-index:2}
+  .compact-apps button{min-height:42px;border:2px solid var(--black);box-shadow:3px 3px var(--black);font:700 9px/1.4 var(--mono);padding:7px 5px;display:flex;align-items:center;justify-content:center;gap:7px}
+  .compact-apps button:hover{filter:brightness(1.07)}
+  .compact-apps button:active{transform:translate(2px,2px);box-shadow:1px 1px var(--black)}
+  .compact-apps button>span:first-child{font:19px/1 Arial}
+  .room-art{top:calc(var(--intro-height,280px) + 85px);background-position:center 66%;border-top:2px solid var(--black)}
+  .room-light{display:none}
+}
+@media(max-width:560px){
+  .intro-window{top:8px;left:8px;width:calc(100% - 16px);padding-top:7px}
+  .intro-panel{margin:0 7px;padding:10px 11px 12px}
+  .intro-copy{width:100%}
+  .eyebrow{font-size:6px;letter-spacing:.1px}
+  .intro-copy h1{font-size:clamp(32px,10.7vw,54px);line-height:.9;letter-spacing:-.7px;margin:9px 0 10px;max-width:74%}
+  .intro-computer{width:29%;top:20px;right:5px}
+  .intro-role{font-size:7px;line-height:1.5;margin:10px 0 7px}
+  .intro-description{font-size:13px;line-height:1.45;max-width:none}
+  .intro-sticker{display:none}
+  .social-tray{grid-template-columns:1fr 1fr;padding:9px 10px 12px;gap:9px 12px}
+  .social-tray .retro-button{min-height:34px;font-size:9px;padding:6px 9px;border-width:2px}
+  .social-tray .retro-button>span{font-size:15px}
+  .intro-info{width:19px;height:19px;font-size:15px}
+  .compact-apps{top:calc(var(--intro-height,280px) + 20px);left:10px;right:13px;gap:7px}
+  .compact-apps button{font-size:7px;min-height:40px;padding:5px 3px;gap:4px}
+  .compact-apps button>span:first-child{font-size:15px}
+  .room-art{top:calc(var(--intro-height,280px) + 73px);background-position:58% 65%}
+  .info-app .toolbox-list{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:560px) and (max-height:650px){
+  .intro-role,.intro-aside{display:none}
+  .intro-copy h1{font-size:clamp(28px,9.8vw,38px);margin:7px 0 9px}
+  .intro-description{font-size:12px;line-height:1.4}
+}
+@media(max-width:1000px) and (max-height:560px) and (min-aspect-ratio:5/4){
+  .intro-window{top:8px;left:8px;width:54%;padding-top:6px}
+  .intro-panel{margin:0 6px;padding:8px 10px}
+  .intro-copy{width:67%}
+  .eyebrow{font-size:6px}
+  .intro-copy h1{font-size:clamp(28px,8.8dvh,43px);line-height:.88;margin:5px 0 7px;max-width:none}
+  .intro-role{font-size:7px;margin:6px 0}
+  .intro-description{font-size:12px;line-height:1.35}
+  .intro-sticker{display:none}
+  .intro-computer{width:30%;top:16px;right:4px}
+  .social-tray{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:7px 9px 10px}
+  .social-tray .retro-button{font-size:7px;min-height:29px;padding:4px 5px;border-width:2px;gap:4px}
+  .social-tray .retro-button>span{font-size:13px}
+  .compact-apps{top:10px;left:auto;right:12px;width:40%;grid-template-columns:1fr 1fr;gap:10px}
+  .compact-apps button{font-size:9px;min-height:38px}
+  .room-art{inset:0;background-position:center center;border:0}
+}

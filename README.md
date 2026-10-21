@@ -12,6 +12,7 @@ Serve this directory with any static HTTP server, such as `python -m http.server
 
 - Main content: [index.html](index.html)
 - Window design and responsive layouts: [desktop.css](desktop.css)
+- Fixed viewport sizing and compact workspace launchers: [viewport.css](viewport.css)
 - Start menu, app windows, filters, keyboard interactions, and preferences: [desktop.js](desktop.js)
 - Verified project and contribution content: [desktop-data.js](desktop-data.js)
 - Localized hair, cloud, and city-light animation: [room-motion.js](room-motion.js)
@@ -27,6 +28,8 @@ The room is decorative pixel artwork adapted from the user's chosen reference. T
 Bungee, Pixelify Sans, VT323, and IBM Plex Mono are self-hosted under their respective SIL Open Font Licenses; license texts are included in [assets/fonts](assets/fonts).
 
 ## Accessibility
+
+The workspace fits one viewport without page scrolling. On compact screens, project, toolbox, education, and about windows open from launchers. Long app content scrolls inside its window while the desktop stays fixed.
 
 The site supports keyboard navigation, native modal dialogs with focus restoration, visible focus states, an explicit motion pause control, and OS reduced-motion preferences. Main project links, email, and the résumé remain available without JavaScript. Contact opens the visitor's email application.
 
