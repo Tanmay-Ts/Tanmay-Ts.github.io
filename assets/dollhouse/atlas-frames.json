@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "image": "character-atlas.png",
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "canvas": {
+    "width": 400,
+    "height": 430,
+    "groundY": 420,
+    "scale": 1
+  },
+  "alphaThreshold": 8,
+  "measurement": "Eight-connected alpha >= 8 components with tiny islands within 6 atlas pixels merged; solid ground measured at alpha >= 128. Rectangles are inclusive extents expressed as x, y, width, height. No image pixels were edited.",
+  "registration": "All frames use one atlas pixel per canvas pixel, horizontal crop centering, and the solid ground line at canvas y=420. ground.x records the support midpoint for optional pose-specific registration; the renderer centers the crop.",
+  "frames": [
+    {
+      "index": 0,
+      "name": "frontstop",
+      "x": 54,
+      "y": 99,
+      "w": 192,
+      "h": 368,
+      "normalized": {
+        "x": 0.0430622,
+        "y": 0.07894737,
+        "w": 0.15311005,
+        "h": 0.29346093
+      },
+      "ground": {
+        "x": 93.5,
+        "y": 367
+      },
+      "draw": {
+        "x": 104,
+        "y": 53
+      }
+    },
+    {
+      "index": 1,
+      "name": "workA",
+      "x": 356,
+      "y": 168,
+      "w": 238,
+      "h": 300,
+      "normalized": {
+        "x": 0.28389155,
+        "y": 0.13397129,
+        "w": 0.18979266,
+        "h": 0.23923445
+      },
+      "ground": {
+        "x": 116,
+        "y": 299
+      },
+      "draw": {
+        "x": 81,
+        "y": 121
+      }
+    },
+    {
+      "index": 2,
+      "name": "workB",
+      "x": 659,
+      "y": 166,
+      "w": 239,
+      "h": 302,
+      "normalized": {
+        "x": 0.52551834,
+        "y": 0.1323764,
+        "w": 0.19059011,
+        "h": 0.24082935
+      },
+      "ground": {
+        "x": 115.5,
+        "y": 301
+      },
+      "draw": {
+        "x": 81,
+        "y": 119
+      }
+    },
+    {
+      "index": 3,
+      "name": "readA",
+      "x": 997,
+      "y": 168,
+      "w": 215,
+      "h": 300,
+      "normalized": {
+        "x": 0.79505582,
+        "y": 0.13397129,
+        "w": 0.17145136,
+        "h": 0.23923445
+      },
+      "ground": {
+        "x": 107.5,
+        "y": 299
+      },
+      "draw": {
+        "x": 93,
+        "y": 121
+      }
+    },
+    {
+      "index": 4,
+      "name": "readB",
+      "x": 49,
+      "y": 545,
+      "w": 223,
+      "h": 305,
+      "normalized": {
+        "x": 0.03907496,
+        "y": 0.43460925,
+        "w": 0.17783094,
+        "h": 0.24322169
+      },
+      "ground": {
+        "x": 114,
+        "y": 304
+      },
+      "draw": {
+        "x": 89,
+        "y": 116
+      }
+    },
+    {
+      "index": 5,
+      "name": "controller",
+      "x": 355,
+      "y": 551,
+      "w": 233,
+      "h": 301,
+      "normalized": {
+        "x": 0.2830941,
+        "y": 0.43939394,
+        "w": 0.18580542,
+        "h": 0.2400319
+      },
+      "ground": {
+        "x": 118.5,
+        "y": 300
+      },
+      "draw": {
+        "x": 84,
+        "y": 120
+      }
+    },
+    {
+      "index": 6,
+      "name": "stretch",
+      "x": 661,
+      "y": 480,
+      "w": 220,
+      "h": 376,
+      "normalized": {
+        "x": 0.52711324,
+        "y": 0.38277512,
+        "w": 0.1754386,
+        "h": 0.29984051
+      },
+      "ground": {
+        "x": 120,
+        "y": 375
+      },
+      "draw": {
+        "x": 90,
+        "y": 45
+      }
+    },
+    {
+      "index": 7,
+      "name": "bag",
+      "x": 993,
+      "y": 500,
+      "w": 217,
+      "h": 356,
+      "normalized": {
+        "x": 0.79186603,
+        "y": 0.39872408,
+        "w": 0.17304625,
+        "h": 0.28389155
+      },
+      "ground": {
+        "x": 117,
+        "y": 355
+      },
+      "draw": {
+        "x": 92,
+        "y": 65
+      }
+    },
+    {
+      "index": 8,
+      "name": "guard",
+      "x": 32,
+      "y": 874,
+      "w": 210,
+      "h": 331,
+      "normalized": {
+        "x": 0.02551834,
+        "y": 0.6969697,
+        "w": 0.16746411,
+        "h": 0.26395534
+      },
+      "ground": {
+        "x": 105,
+        "y": 330
+      },
+      "draw": {
+        "x": 95,
+        "y": 90
+      }
+    },
+    {
+      "index": 9,
+      "name": "punch",
+      "x": 322,
+      "y": 885,
+      "w": 273,
+      "h": 323,
+      "normalized": {
+        "x": 0.25677831,
+        "y": 0.70574163,
+        "w": 0.21770335,
+        "h": 0.25757576
+      },
+      "ground": {
+        "x": 118.5,
+        "y": 321
+      },
+      "draw": {
+        "x": 64,
+        "y": 99
+      }
+    },
+    {
+      "index": 10,
+      "name": "kick",
+      "x": 639,
+      "y": 877,
+      "w": 315,
+      "h": 328,
+      "normalized": {
+        "x": 0.50956938,
+        "y": 0.69936204,
+        "w": 0.25119617,
+        "h": 0.261563
+      },
+      "ground": {
+        "x": 116,
+        "y": 327
+      },
+      "draw": {
+        "x": 43,
+        "y": 93
+      },
+      "clip": [
+        [
+          0,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          315,
+          147
+        ],
+        [
+          271,
+          147
+        ],
+        [
+          271,
+          328
+        ],
+        [
+          0,
+          328
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "name": "sleep",
+      "x": 922,
+      "y": 1034,
+      "w": 317,
+      "h": 174,
+      "normalized": {
+        "x": 0.73524721,
+        "y": 0.8245614,
+        "w": 0.25279107,
+        "h": 0.13875598
+      },
+      "ground": {
+        "x": 159.5,
+        "y": 172
+      },
+      "draw": {
+        "x": 42,
+        "y": 248
+      }
+    }
+  ]
+}

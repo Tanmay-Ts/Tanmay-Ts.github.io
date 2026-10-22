@@ -2,7 +2,7 @@
 
 Personal portfolio at **https://tanmay-ts.github.io/**.
 
-A retro desktop portfolio built around an illustrated pixel workspace, functioning app windows, self-hosted fonts, project notes, verified open-source contributions, and a downloadable résumé. No build step or third-party runtime JavaScript is required.
+A Pixel Dollhouse portfolio with an illustrated apartment, a separate gym, a time-driven character, functioning app windows, verified projects and contributions, and a downloadable résumé. No build step or third-party runtime JavaScript is required.
 
 ## Preview
 
@@ -11,17 +11,18 @@ Serve this directory with any static HTTP server, such as `python -m http.server
 ## Update
 
 - Main content: [index.html](index.html)
-- Window design and responsive layouts: [desktop.css](desktop.css)
-- Fixed viewport sizing and compact workspace launchers: [viewport.css](viewport.css)
-- Start menu, app windows, filters, keyboard interactions, and preferences: [desktop.js](desktop.js)
+- Dollhouse layout, scene presentation, and responsive sizing: [dollhouse.css](dollhouse.css)
+- Shared portfolio dialog styles: [desktop.css](desktop.css)
+- App windows, filters, keyboard interactions, and preferences: [portfolio-apps.js](portfolio-apps.js)
 - Verified project and contribution content: [desktop-data.js](desktop-data.js)
-- Localized hair, cloud, and city-light animation: [room-motion.js](room-motion.js)
-- Workspace artwork and generation details: [assets/ARTWORK.md](assets/ARTWORK.md)
+- IST schedule, activity animation, time previews, and character reactions: [dollhouse-life.js](dollhouse-life.js)
+- Transparent sprite rendering and measured frames: [atlas-renderer.js](atlas-renderer.js), [atlas-frames.json](assets/dollhouse/atlas-frames.json)
+- Artwork and generation details: [assets/dollhouse/ARTWORK.md](assets/dollhouse/ARTWORK.md)
 - Résumé: [assets/Tanmay-Surte-Resume.pdf](assets/Tanmay-Surte-Resume.pdf)
 
 GitHub Pages publishes from the root of `main`. Push to `main` to update the site. Open-source PR statuses were verified on 22 October 2026; update the date when rechecking them.
 
-The room is decorative pixel artwork adapted from the user's chosen reference. Text and controls are real HTML. Metrics are scoped to the linked evaluations; ongoing research and draft/open contributions are labeled accordingly. Private memory archives are not included.
+The room and character are decorative pixel artwork adapted from the approved Pixel Dollhouse concept. Text and controls are real HTML. The character follows a scheduled illustration of a routine, not live personal tracking. Metrics are scoped to the linked evaluations; ongoing research and draft/open contributions are labeled accordingly. Private memory archives are not included.
 
 ## Fonts
 
@@ -29,8 +30,25 @@ Bungee, Pixelify Sans, VT323, and IBM Plex Mono are self-hosted under their resp
 
 ## Accessibility
 
-The workspace fits one viewport without page scrolling. On compact screens, project, toolbox, education, and about windows open from launchers. Long app content scrolls inside its window while the desktop stays fixed.
+The whole portfolio fits one viewport without page scrolling. Long project and about content scrolls inside its window while the dollhouse remains fixed.
 
 The site supports keyboard navigation, native modal dialogs with focus restoration, visible focus states, an explicit motion pause control, and OS reduced-motion preferences. Main project links, email, and the résumé remain available without JavaScript. Contact opens the visitor's email application.
 
-Room animation uses a single WebGL canvas capped at 24 FPS and 1.5 device-pixel ratio. It pauses when offscreen or hidden and falls back to the original image without WebGL. The masks are calibrated to the 1536 × 1024 workspace asset; replacing it with a differently sized image automatically disables the effect.
+The character uses twelve measured transparent sprites rendered to a small cached canvas. Frame changes stop with reduced motion, the pause control, hidden tabs, or an open app window. The hover/tap/keyboard reaction remains usable with reduced motion.
+
+## Daily routine
+
+The schedule always uses `Asia/Kolkata`, independently of the visitor's timezone:
+
+| IST | Activity |
+| --- | --- |
+| 00:00–06:30 | Laptop work |
+| 06:30–13:00 | Sleep |
+| 13:00–14:00 | Wake up and lunch |
+| 14:00–17:00 | Reading and work, alternating every 30 minutes |
+| 17:00–19:00 | Unwind |
+| 19:00–20:00 | Prepare for MMA |
+| 20:00–22:00 | MMA training |
+| 22:00–00:00 | Chill after training |
+
+Visitors can select activities, click room zones, or move the time slider. **Follow IST** restores the scheduled scene. The real clock remains live during previews. Desktop hover, mobile tap, or keyboard activation makes the character face the visitor and say “Hey, don't do that!” for 2.8 seconds before returning to the activity.
